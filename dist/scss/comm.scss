@@ -824,7 +824,9 @@ body {
 }
 
 #service {
-  margin-top: 300px;
+  width: 100%;
+  height: 120vh;
+  margin-top: 200px;
   margin-bottom: 400px;
   .service-tit {
     position: relative;
@@ -985,6 +987,57 @@ body {
       }
     }
   }
+  .service-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      li {
+        margin: 0 20px;
+        p {
+          color: var(--default-text);
+          font-family: "Roboto", sans-serif;
+          text-align: center;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+        img {
+          width: 150px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+#site {
+  ul {
+    width: 100%;
+    li {
+      width: 100%;
+      height: 150px;
+      border-bottom: 1px solid #000;
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        strong {
+          color: var(--default-text);
+          font-family: "Sacred Valley", sans-serif;
+          font-size: 64px;
+          font-style: normal;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }
 
 section {
@@ -992,4 +1045,60 @@ section {
   width: 100%;
   position: relative;
   place-items: center;
+}
+
+.logo-slide {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  margin-top: 20px;
+
+  .scroll {
+    width: 100%;
+    display: flex;
+    img {
+      width: 180px;
+      margin: 0 20px;
+    }
+  }
+
+  .scroll div {
+    color: #000000;
+    font-size: 4em;
+    background: #ffffff;
+    white-space: nowrap;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation: animate 40s linear infinite;
+    animation-delay: -40s;
+  }
+
+  .scroll div:nth-child(2) {
+    animation: animate2 40s linear infinite;
+    animation-delay: -20s;
+  }
+
+  .scroll div span {
+    -webkit-text-stroke: 2px #000000;
+    color: transparent;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes animate2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
 }

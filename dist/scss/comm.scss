@@ -1,0 +1,831 @@
+@import "reset";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/sacred-valley");
+
+:root {
+  --default-text: #000000;
+  --text-color: #4b4b4b;
+  --bg-color: #ffffff;
+  --box-color: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--default-text);
+  background: var(--bg-color);
+  transition: 0.3s ease-out;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+}
+
+.inner {
+  padding: 0 180px;
+  margin: 0 auto;
+}
+
+#main {
+  background: var(--bg-color);
+
+  .logo-slide {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    margin-top: 20px;
+
+    .scroll {
+      width: 100%;
+      display: flex;
+      img {
+        width: 180px;
+        margin: 0 20px;
+      }
+    }
+
+    .scroll div {
+      color: #000000;
+      font-size: 4em;
+      background: #ffffff;
+      white-space: nowrap;
+      font-weight: 900;
+      text-transform: uppercase;
+      animation: animate 40s linear infinite;
+      animation-delay: -40s;
+    }
+
+    .scroll div:nth-child(2) {
+      animation: animate2 40s linear infinite;
+      animation-delay: -20s;
+    }
+
+    .scroll div span {
+      -webkit-text-stroke: 2px #000000;
+      color: transparent;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes animate2 {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-200%);
+      }
+    }
+  }
+
+  // main page
+
+  .main-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .main-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      .main-simbol {
+        display: block;
+      }
+      .main-left-txt {
+        margin-top: 40px;
+        display: block;
+        width: 400px;
+        height: 72px;
+        color: var(--default-text);
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 150% */
+        text-transform: uppercase;
+      }
+    }
+    .main-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .main-right-tit {
+        width: 700px;
+
+        h2 {
+          color: var(--default-text);
+          text-align: right;
+          font-family: "Roboto", sans-serif;
+          font-size: 85px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 100px; /* 108.696% */
+          text-transform: uppercase;
+        }
+        span {
+          color: var(--default-text);
+          font-family: "Sacred Valley", sans-serif;
+          font-size: 92px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 100px;
+          text-transform: capitalize;
+        }
+      }
+      .main-right-txt {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        padding-left: 80px;
+        strong {
+          color: var(--default-text);
+          font-family: "Roboto", sans-serif;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        em {
+          margin-top: 15px;
+          width: 125px;
+          color: var(--default-text);
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px; /* 133.333% */
+          text-transform: uppercase;
+        }
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+    .main-center {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      img {
+        width: 700px;
+        display: block;
+      }
+    }
+    .main-bottom {
+      position: absolute;
+      bottom: -20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+    }
+  }
+}
+
+#sectionAbout {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding-top: 100px;
+  .about-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .about-box {
+      width: 20px;
+      height: 20px;
+      background: var(--box-color);
+    }
+    .about-tit {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 250px;
+      h3 {
+        color: var(--default-text);
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      .about-dot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .about-wrap {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .about-wrap-tit {
+      h3 {
+        color: var(--default-text);
+        font-family: "Roboto", sans-serif;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100px;
+        text-transform: uppercase;
+      }
+      span {
+        color: var(--default-text);
+        font-family: "Sacred Valley", sans-serif;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100px;
+        text-transform: uppercase;
+      }
+    }
+    .about-wrap-tit-2 {
+      h3 {
+        text-align: right;
+        color: var(--default-text);
+        font-family: "Roboto", sans-serif;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100px;
+        text-transform: uppercase;
+      }
+      span {
+        text-align: right;
+        color: var(--default-text);
+        font-family: "Sacred Valley", sans-serif;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100px;
+        text-transform: uppercase;
+      }
+    }
+    .about-wrap-txt {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
+      height: 350px;
+      p {
+        width: 700px;
+        color: var(--text-color);
+        text-align: right;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+    }
+    .about-wrap-txt-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      height: 350px;
+      p {
+        width: 700px;
+        color: var(--text-color);
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .about-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 300px;
+    .about-box {
+      width: 20px;
+      height: 20px;
+      background: var(--box-color);
+    }
+  }
+}
+
+#slide-tit {
+  width: 100%;
+  .slide-tit-center-icon {
+    width: 71px;
+    height: 71px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+  .slide-tit-txt {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    .line {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    h3 {
+      color: var(--default-text);
+      font-family: "Roboto", sans-serif;
+      text-align: left;
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 60px; /* 83.333% */
+      text-transform: uppercase;
+    }
+    span {
+      color: var(--default-text);
+      font-family: "Sacred Valley", sans-serif;
+      text-align: right;
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 60px; /* 83.333% */
+      text-transform: uppercase;
+    }
+  }
+}
+
+// slide
+#swiper-section {
+  width: 100%;
+  height: 80vh;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    width: 1460px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+
+    // 첫번째 슬라이드
+    .slide-wrap {
+      background: var(--bg-color);
+      width: 1460px;
+      height: 800px;
+      border: 2px solid #4b4b4b;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      img {
+        width: 600px;
+        object-fit: cover;
+      }
+      .slide-txt {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        p {
+          position: absolute;
+          top: 220px;
+          right: 100px;
+          color: var(--default-text);
+          text-align: right;
+          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+
+          text-transform: uppercase;
+        }
+        h3 {
+          position: absolute;
+          top: 240px;
+          right: 90px;
+          color: var(--default-text);
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 62px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        span {
+          position: absolute;
+          top: 300px;
+          right: 90px;
+          color: var(--default-text);
+          font-family: "Sacred Valley", sans-serif;
+          text-align: center;
+          font-size: 140px;
+          font-style: normal;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+      }
+      .slide-info {
+        position: absolute;
+        bottom: 110px;
+        left: 40%;
+        width: 450px;
+        p {
+          color: var(--text-color);
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin: 20px 0;
+        }
+      }
+      .slide-arrow {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 123px;
+        height: 123px;
+        // transform: rotate(-135deg);
+      }
+    }
+
+    // 두번째 슬라이드
+    .slide-wrap-2 {
+      background: var(--bg-color);
+      width: 1460px;
+      height: 800px;
+      border: 2px solid #4b4b4b;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      img {
+        width: 600px;
+        object-fit: cover;
+      }
+      .slide-txt {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        p {
+          position: absolute;
+          top: 220px;
+          right: 100px;
+          color: var(--default-text);
+          text-align: right;
+          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        h3 {
+          position: absolute;
+          top: 240px;
+          right: 90px;
+          color: var(--default-text);
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 62px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        span {
+          position: absolute;
+          top: 340px;
+          right: 90px;
+          color: var(--default-text);
+          font-family: "Sacred Valley", sans-serif;
+          text-align: right;
+          font-size: 100px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 90px;
+          text-transform: uppercase;
+        }
+      }
+      .slide-info {
+        position: absolute;
+        bottom: 110px;
+        left: 40%;
+        width: 450px;
+        p {
+          color: var(--text-color);
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin: 20px 0;
+        }
+      }
+      .slide-arrow {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 123px;
+        height: 123px;
+        // transform: rotate(-135deg);
+      }
+    }
+
+    // 세번째 슬라이드
+    .slide-wrap-3 {
+      background: var(--bg-color);
+      width: 1460px;
+      height: 800px;
+      border: 2px solid #4b4b4b;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      img {
+        width: 600px;
+        object-fit: cover;
+      }
+      .slide-txt {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        p {
+          position: absolute;
+          top: 220px;
+          right: 100px;
+          color: var(--default-text);
+          text-align: right;
+          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        h3 {
+          position: absolute;
+          top: 240px;
+          right: 90px;
+          color: var(--default-text);
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 62px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        span {
+          position: absolute;
+          top: 340px;
+          right: 90px;
+          color: var(--default-text);
+          font-family: "Sacred Valley", sans-serif;
+          text-align: right;
+          font-size: 100px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 90px;
+          text-transform: uppercase;
+        }
+      }
+      .slide-info {
+        position: absolute;
+        bottom: 110px;
+        left: 40%;
+        width: 450px;
+        p {
+          color: var(--text-color);
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin: 20px 0;
+        }
+      }
+      .slide-arrow {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 123px;
+        height: 123px;
+        // transform: rotate(-135deg);
+      }
+    }
+
+    // 네번째 슬라이드
+    .slide-wrap-4 {
+      background: var(--bg-color);
+      width: 1460px;
+      height: 800px;
+      border: 2px solid #4b4b4b;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      img {
+        width: 600px;
+        object-fit: cover;
+      }
+      .slide-txt {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        p {
+          position: absolute;
+          top: 220px;
+          right: 100px;
+          color: var(--default-text);
+          text-align: right;
+          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        h3 {
+          position: absolute;
+          top: 240px;
+          right: 90px;
+          color: var(--default-text);
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 62px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        span {
+          position: absolute;
+          top: 340px;
+          right: 90px;
+          color: var(--default-text);
+          font-family: "Sacred Valley", sans-serif;
+          text-align: right;
+          font-size: 100px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 90px;
+          text-transform: uppercase;
+        }
+      }
+      .slide-info {
+        position: absolute;
+        bottom: 110px;
+        left: 40%;
+        width: 450px;
+        p {
+          color: var(--text-color);
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin: 20px 0;
+        }
+      }
+      .slide-arrow {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 123px;
+        height: 123px;
+        // transform: rotate(-135deg);
+      }
+    }
+
+    // 다섯번째 슬라이드
+    .slide-wrap-5 {
+      background: var(--bg-color);
+      width: 1460px;
+      height: 800px;
+      border: 2px solid #4b4b4b;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      img {
+        width: 600px;
+        object-fit: cover;
+      }
+      .slide-txt {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        p {
+          position: absolute;
+          top: 220px;
+          right: 100px;
+          color: var(--default-text);
+          text-align: right;
+          font-family: "Roboto", sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        h3 {
+          position: absolute;
+          top: 240px;
+          right: 90px;
+          color: var(--default-text);
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 62px;
+          font-style: normal;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        span {
+          position: absolute;
+          top: 340px;
+          right: 90px;
+          color: var(--default-text);
+          font-family: "Sacred Valley", sans-serif;
+          text-align: right;
+          font-size: 100px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 90px;
+          text-transform: uppercase;
+        }
+      }
+      .slide-info {
+        position: absolute;
+        bottom: 110px;
+        left: 40%;
+        width: 450px;
+        p {
+          color: var(--text-color);
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin: 20px 0;
+        }
+      }
+      .slide-arrow {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 123px;
+        height: 123px;
+        // transform: rotate(-135deg);
+      }
+    }
+  }
+  .swiper-slide img {
+    display: block;
+  }
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  place-items: center;
+}

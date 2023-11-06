@@ -582,6 +582,7 @@ body {
 
 #slide-tit {
   width: 100%;
+  height: 700px;
 }
 #slide-tit .slide-tit-center-icon {
   width: 71px;
@@ -623,11 +624,11 @@ body {
 
 #swiper-section {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
 }
 #swiper-section .swiper {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 #swiper-section .swiper-slide {
   width: 1460px;
@@ -1048,6 +1049,170 @@ body {
 }
 #swiper-section .swiper-slide img {
   display: block;
+}
+
+#service {
+  margin-top: 300px;
+  margin-bottom: 400px;
+}
+#service .service-tit {
+  position: relative;
+}
+#service .service-tit .service-icon {
+  position: absolute;
+  top: 200px;
+  left: 40px;
+  width: 61px;
+  height: 61px;
+}
+#service .service-tit .service-tit-txt {
+  position: relative;
+  width: 100%;
+}
+#service .service-tit .service-tit-txt span {
+  color: var(--default-text);
+  text-align: center;
+  font-family: "Sacred Valley", sans-serif;
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#service .service-tit .service-tit-txt h3 {
+  color: var(--default-text);
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  font-size: 110px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#service .service-tit .service-tit-txt .stt-d {
+  position: absolute;
+  top: 230px;
+  left: 120px;
+}
+#service .service-tit .service-tit-txt .stt-i {
+  position: absolute;
+  top: 250px;
+  right: 140px;
+}
+#service .service-tit .service-tit-txt .stt-a {
+  position: absolute;
+  top: 400px;
+  left: 370px;
+}
+#service .service-tit .service-tit-txt .stt-s {
+  position: absolute;
+  top: 530px;
+  left: 670px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt {
+  width: 277px;
+  position: absolute;
+  top: 450px;
+  left: 900px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt .stt-small-txt-position {
+  position: relative;
+  width: 100%;
+}
+#service .service-tit .service-tit-txt .stt-small-txt .stt-small-txt-position p {
+  color: var(--default-text);
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#service .service-tit .service-tit-txt .stt-small-txt .stt-small-txt-position .stt-p-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#service .service-tit .service-tit-txt .stt-small-txt .stt-small-txt-position .stt-p-2 {
+  position: absolute;
+  top: 0;
+  left: 80px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt .stt-small-txt-position .stt-p-3 {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt .stt-small-txt-position .stt-p-4 {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt .stt-small-txt-position .stt-p-5 {
+  position: absolute;
+  top: 45px;
+  left: 145px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 {
+  width: 388px;
+  position: absolute;
+  top: 600px;
+  left: 200px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 .stt-small-txt-position-2 {
+  position: relative;
+  width: 100%;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 .stt-small-txt-position-2 p {
+  color: var(--default-text);
+  font-family: "Roboto", sans-serif;
+  text-align: right;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 .stt-small-txt-position-2 .stt-p-2-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 .stt-small-txt-position-2 .stt-p-2-2 {
+  position: absolute;
+  top: 0;
+  right: 90px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 .stt-small-txt-position-2 .stt-p-2-3 {
+  position: absolute;
+  top: 15px;
+  right: 50px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 .stt-small-txt-position-2 .stt-p-2-4 {
+  position: absolute;
+  top: 30px;
+  right: 120px;
+}
+#service .service-tit .service-tit-txt .stt-small-txt-2 .stt-small-txt-position-2 .stt-p-2-5 {
+  position: absolute;
+  top: 45px;
+  right: 0;
+}
+#service .service-tit .service-rotate-logo {
+  position: absolute;
+  top: 570px;
+  right: 90px;
+  animation: rotation reverse 15s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+#service .service-tit .service-rotate-logo img {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(359deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 section {

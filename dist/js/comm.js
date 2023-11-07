@@ -20,26 +20,49 @@ gsap.from(".word", {
 //     // Your Swiper configuration options
 //   });
 
+//   var isSnapped = false; // Initialize the snap state to false
+
 //   ScrollTrigger.create({
 //     trigger: "#swiper-section",
 //     start: "top top",
-//     end: "bottom bottom",
+//     end: "bottom top",
 //     onEnter: () => {
 //       var wrapper = document.querySelector(".swiper-wrapper");
+//       var trigger = document.querySelector("#swiper-section");
+//       var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2; // Center the snapped slider
 //       gsap.to(wrapper, {
-//         y: -wrapper.scrollHeight,
-//         duration: 0.5, // Adjust the duration as needed
-//         ease: "power2.inOut", // You can use different easing functions
+//         y: centerY,
+//         duration: 0.5,
+//         ease: "power2.inOut",
+//         onComplete: () => {
+//           isSnapped = true; // Snap is active when animation completes
+//         },
 //       });
 //     },
 //     onLeaveBack: () => {
 //       var wrapper = document.querySelector(".swiper-wrapper");
-//       gsap.to(wrapper, {
-//         y: 0,
-//         duration: 0.5, // Adjust the duration as needed
-//         ease: "power2.inOut", // You can use different easing functions
-//       });
+//       if (isSnapped) {
+//         // Prevent snap release when scrolling quickly
+//         var trigger = document.querySelector("#swiper-section");
+//         var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2; // Center the snapped slider
+//         gsap.to(wrapper, {
+//           y: centerY,
+//           duration: 0.2,
+//           ease: "power2.inOut",
+//           onComplete: () => {
+//             isSnapped = false; // Snap is released when animation completes
+//           },
+//         });
+//       }
 //     },
+//   });
+
+//   swiper.on("slideChange", function () {
+//     if (swiper.isEnd) {
+//       ScrollTrigger.getById("swiper-section").disable();
+//     } else {
+//       ScrollTrigger.getById("swiper-section").enable();
+//     }
 //   });
 // });
 
@@ -48,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Your Swiper configuration options
   });
 
-  var isSnapped = false; // Add this variable to track if the snap is active
+  var isSnapped = false; // Initialize the snap state to false
 
   ScrollTrigger.create({
     trigger: "#swiper-section",
-    start: "top top",
-    end: "bottom top",
+    start: "top center",
+    end: "bottom center",
     onEnter: () => {
       var wrapper = document.querySelector(".swiper-wrapper");
       var trigger = document.querySelector("#swiper-section");
@@ -88,10 +111,42 @@ document.addEventListener("DOMContentLoaded", function () {
   swiper.on("slideChange", function () {
     if (swiper.isEnd) {
       ScrollTrigger.getById("swiper-section").disable();
-      swiper.detachEvents(); // Disable swiper events when you reach the last slide
     } else {
       ScrollTrigger.getById("swiper-section").enable();
-      swiper.attachEvents(); // Enable swiper events when not on the last slide
     }
+  });
+});
+
+// scroll smooth
+
+gsap.registerPlugin(ScrollTrigger);
+
+const sections = document.querySelectorAll("#sectionAbout");
+
+sections.forEach((section, index) => {
+  ScrollTrigger.create({
+    trigger: "#main",
+    start: "top top",
+    end: "bottom top",
+    pin: true,
+    pinSpacing: false,
+    onEnter: () => console.log(`Entered section ${index + 1}`),
+    onLeaveBack: () => console.log(`Left section ${index + 1}`),
+  });
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+const slide = document.querySelectorAll("#swiper-section");
+
+sections.forEach((section, index) => {
+  ScrollTrigger.create({
+    trigger: "#slide-tit",
+    start: "top top", // Snap when the top of the section hits the top of the viewport
+    end: "bottom top", // Snap when the bottom of the section hits the top of the viewport
+    pin: true, // Pin the section while it's in view
+    pinSpacing: false, // Disable pinSpacing to avoid gaps between sections
+    onEnter: () => console.log(`Entered section ${index + 1}`),
+    onLeaveBack: () => console.log(`Left section ${index + 1}`),
   });
 });

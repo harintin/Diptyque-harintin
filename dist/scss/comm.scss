@@ -36,6 +36,7 @@ body {
 
 #main {
   background: var(--bg-color);
+  height: 100vh;
 
   .logo-slide {
     position: relative;
@@ -101,12 +102,12 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     .main-left {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: flex-start;
       align-items: center;
       height: 100%;
       .main-simbol {
@@ -130,7 +131,7 @@ body {
     .main-right {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: flex-start;
       align-items: center;
       .main-right-tit {
         width: 700px;
@@ -189,7 +190,7 @@ body {
     }
     .main-center {
       position: absolute;
-      top: 30%;
+      top: 20%;
       left: 50%;
       transform: translate(-50%, -50%);
       img {
@@ -199,9 +200,9 @@ body {
     }
     .main-bottom {
       position: absolute;
-      bottom: -20%;
+      bottom: 240px;
       left: 50%;
-      transform: translate(-50%, -20%);
+      transform: translateX(-50%);
     }
   }
 }
@@ -342,7 +343,7 @@ body {
 
 #slide-tit {
   width: 100%;
-  height: 700px;
+  height: 100vh;
   .slide-tit-center-icon {
     width: 71px;
     height: 71px;
@@ -386,13 +387,11 @@ body {
 #swiper-section {
   width: 100%;
   height: 100vh;
-  .swiper {
-    width: 100%;
-    height: 100vh;
-  }
+
   .swiper-slide {
-    width: 1460px;
-    height: 800px;
+    background: var(--default-text);
+    width: 100%;
+    height: 110vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1018,13 +1017,13 @@ body {
 
 #site {
   width: 100%;
-  height: 600px;
+  height: 700px;
   ul {
     width: 100%;
     li {
       width: 100%;
       height: 150px;
-      border-bottom: 1px solid #000;
+      border-bottom: 1px solid #4b4b4b;
       a {
         height: 150px;
         display: flex;
@@ -1046,10 +1045,10 @@ body {
 
 #footer {
   width: 100%;
-  height: 900px;
+  height: 60vh;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   .footer-left {
     width: 50%;
     height: 100%;
@@ -1129,10 +1128,106 @@ body {
       }
     }
   }
+  .footer-right {
+    width: 50%;
+    .news-letter {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      h3 {
+        color: var(--default-text);
+        font-family: "Roboto", sans-serif;
+        font-size: 4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+      span {
+        color: var(--default-text);
+        font-family: "Sacred Valley", sans-serif;
+        font-size: 4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      p {
+        width: 320px;
+        color: var(--default-text);
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input#name {
+          width: 500px;
+          height: 55px;
+          padding: 20px;
+          background: #eeeeee;
+          outline: none;
+          border: #eeeeee;
+          border-radius: 28px;
+          margin: 20px 0;
+        }
+        input#email {
+          width: 500px;
+          height: 55px;
+          padding: 20px;
+          background: #eeeeee;
+          outline: none;
+          border: #eeeeee;
+          border-radius: 28px;
+          margin-bottom: 60px;
+        }
+        input::placeholder {
+          color: var(--text-color);
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        button {
+          width: 190px;
+          height: 55px;
+          background: #4b4b4b;
+          color: var(--bg-color);
+          font-family: "Roboto", sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+.copyright {
+  margin: 50px 0;
+  p {
+    color: var(--text-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+  }
 }
 
 section {
-  min-height: 100vh;
   width: 100%;
   position: relative;
   place-items: center;

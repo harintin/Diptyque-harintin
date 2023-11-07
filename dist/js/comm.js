@@ -13,95 +13,54 @@ gsap.from(".word", {
   },
 });
 
+gsap.from(".line", {
+  y: "100%",
+  opacity: 0,
+  duration: 1.8,
+  ease: "power4.out",
+  stagger: 0.2,
+
+  scrollTrigger: {
+    trigger: ".about-wrap-tit",
+    start: "top center",
+  },
+});
+
 // slide js
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   var swiper = new Swiper(".mySwiper", {
-//     // Your Swiper configuration options
-//   });
-
-//   var isSnapped = false; // Initialize the snap state to false
-
-//   ScrollTrigger.create({
-//     trigger: "#swiper-section",
-//     start: "top top",
-//     end: "bottom top",
-//     onEnter: () => {
-//       var wrapper = document.querySelector(".swiper-wrapper");
-//       var trigger = document.querySelector("#swiper-section");
-//       var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2; // Center the snapped slider
-//       gsap.to(wrapper, {
-//         y: centerY,
-//         duration: 0.5,
-//         ease: "power2.inOut",
-//         onComplete: () => {
-//           isSnapped = true; // Snap is active when animation completes
-//         },
-//       });
-//     },
-//     onLeaveBack: () => {
-//       var wrapper = document.querySelector(".swiper-wrapper");
-//       if (isSnapped) {
-//         // Prevent snap release when scrolling quickly
-//         var trigger = document.querySelector("#swiper-section");
-//         var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2; // Center the snapped slider
-//         gsap.to(wrapper, {
-//           y: centerY,
-//           duration: 0.2,
-//           ease: "power2.inOut",
-//           onComplete: () => {
-//             isSnapped = false; // Snap is released when animation completes
-//           },
-//         });
-//       }
-//     },
-//   });
-
-//   swiper.on("slideChange", function () {
-//     if (swiper.isEnd) {
-//       ScrollTrigger.getById("swiper-section").disable();
-//     } else {
-//       ScrollTrigger.getById("swiper-section").enable();
-//     }
-//   });
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
-  var swiper = new Swiper(".mySwiper", {
-    // Your Swiper configuration options
-  });
+  var swiper = new Swiper(".mySwiper", {});
 
-  var isSnapped = false; // Initialize the snap state to false
+  var isSnapped = false;
 
   ScrollTrigger.create({
     trigger: "#swiper-section",
-    start: "top center",
-    end: "bottom center",
+    start: "center center",
+    end: "center center",
     onEnter: () => {
       var wrapper = document.querySelector(".swiper-wrapper");
       var trigger = document.querySelector("#swiper-section");
-      var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2; // Center the snapped slider
+      var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2;
       gsap.to(wrapper, {
         y: centerY,
         duration: 0.5,
         ease: "power2.inOut",
         onComplete: () => {
-          isSnapped = true; // Snap is active when animation completes
+          isSnapped = true;
         },
       });
     },
     onLeaveBack: () => {
       var wrapper = document.querySelector(".swiper-wrapper");
       if (isSnapped) {
-        // Prevent snap release when scrolling quickly
         var trigger = document.querySelector("#swiper-section");
-        var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2; // Center the snapped slider
+        var centerY = (trigger.clientHeight - wrapper.clientHeight) / 2;
         gsap.to(wrapper, {
           y: centerY,
           duration: 0.2,
           ease: "power2.inOut",
           onComplete: () => {
-            isSnapped = false; // Snap is released when animation completes
+            isSnapped = false;
           },
         });
       }
@@ -142,11 +101,70 @@ const slide = document.querySelectorAll("#swiper-section");
 sections.forEach((section, index) => {
   ScrollTrigger.create({
     trigger: "#slide-tit",
-    start: "top top", // Snap when the top of the section hits the top of the viewport
-    end: "bottom top", // Snap when the bottom of the section hits the top of the viewport
-    pin: true, // Pin the section while it's in view
-    pinSpacing: false, // Disable pinSpacing to avoid gaps between sections
+    start: "top top",
+    end: "bottom top",
+    pin: true,
+    pinSpacing: false,
     onEnter: () => console.log(`Entered section ${index + 1}`),
     onLeaveBack: () => console.log(`Left section ${index + 1}`),
   });
+});
+
+// cursor
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  var cursor = document.querySelector(".custom-cursor");
+  var links = document.querySelectorAll("a");
+  var initCursor = false;
+
+  for (var i = 0; i < links.length; i++) {
+    var selfLink = links[i];
+
+    selfLink.addEventListener("mouseover", function () {
+      cursor.classList.add("custom-cursor--link");
+    });
+    selfLink.addEventListener("mouseout", function () {
+      cursor.classList.remove("custom-cursor--link");
+    });
+  }
+
+  window.onmousemove = function (e) {
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+
+    if (!initCursor) {
+      TweenLite.to(cursor, 0.3, {
+        opacity: 1,
+      });
+      initCursor = true;
+    }
+
+    TweenLite.to(cursor, 0, {
+      top: mouseY + "px",
+      left: mouseX + "px",
+    });
+  };
+
+  window.onmouseout = function (e) {
+    TweenLite.to(cursor, 0.3, {
+      opacity: 0,
+    });
+    initCursor = false;
+  };
+});
+
+// back to top
+
+var button = document.getElementById("back-to-top-button");
+
+window.addEventListener("scroll", function () {
+  if (document.documentElement.scrollTop > 100) {
+    button.style.display = "block";
+  } else {
+    button.style.display = "none";
+  }
+});
+
+button.addEventListener("click", function () {
+  document.documentElement.scrollTop = 0;
 });

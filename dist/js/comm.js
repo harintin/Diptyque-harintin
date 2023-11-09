@@ -31,12 +31,12 @@ gsap.from(".line", {
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".mySwiper", {});
 
-  var isSnapped = false;
+  var isSnapped = true;
 
   ScrollTrigger.create({
     trigger: "#swiper-section",
-    start: "center center",
-    end: "center center",
+    start: "top top",
+    end: "bottom bottom",
     onEnter: () => {
       var wrapper = document.querySelector(".swiper-wrapper");
       var trigger = document.querySelector("#swiper-section");
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 0.5,
         ease: "power2.inOut",
         onComplete: () => {
-          isSnapped = true;
+          isSnapped = false;
         },
       });
     },
@@ -167,4 +167,18 @@ window.addEventListener("scroll", function () {
 
 button.addEventListener("click", function () {
   document.documentElement.scrollTop = 0;
+});
+
+// smooth
+
+function smoothScrollTo(yPosition) {
+  gsap.to(window, {
+    duration: 100,
+    scrollTo: yPosition,
+    ease: "power4.inOut",
+  });
+}
+
+document.getElementById("scrollButton").addEventListener("click", function () {
+  smoothScrollTo(2000);
 });

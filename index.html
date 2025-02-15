@@ -400,9 +400,9 @@
           <!-- script -->
         </section>
 
-        <section id="swiper-section">
+        <section id="swiper-section" class="inner">
           <!-- Swiper -->
-          <div class="swiper mySwiper">
+          <div class="swiper swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide inner">
                 <div class="slide-wrap">
@@ -664,20 +664,6 @@
               </div>
             </div>
           </div>
-          <script>
-            var swiper = new Swiper(".mySwiper", {
-              direction: "horizontal",
-              slidesPerView: 1,
-              mousewheel: {
-                releaseOnEdges: true,
-              },
-              centeredSlides: true,
-              snap: {
-                speed: 200,
-              },
-              stopOnLast: true,
-            });
-          </script>
         </section>
         <section id="service" class="inner">
           <div class="service-tit">
@@ -1065,9 +1051,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script></script>
     <script src="https://unpkg.com/split-type"></script>
   </body>
 </html>

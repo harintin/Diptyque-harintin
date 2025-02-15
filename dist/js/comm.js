@@ -4,8 +4,8 @@ gsap.from(".word", {
   y: "100%",
   opacity: 0,
   duration: 0.5,
-  ease: "power1.out",
-  stagger: 0.1,
+  ease: "power2.out",
+  stagger: 0.2,
 
   scrollTrigger: {
     trigger: ".about-bottom",
@@ -16,12 +16,12 @@ gsap.from(".word", {
 gsap.from(".line", {
   y: "100%",
   opacity: 0,
-  duration: 1.8,
-  ease: "power4.out",
-  stagger: 0.2,
+  duration: 1.2,
+  ease: "power2.out",
+  stagger: 0.3,
 
   scrollTrigger: {
-    trigger: ".about-wrap-tit",
+    trigger: ".about-wrap",
     start: "top center",
   },
 });
@@ -84,3 +84,13 @@ window.addEventListener("scroll", function () {
 button.addEventListener("click", function () {
   document.documentElement.scrollTop = 0;
 });
+
+var swiper = new Swiper(".swiper-container", {
+  spaceBetween: 20,
+  autoplay: true,
+  slidesPerView: 1,
+  centeredSlides: false,
+  speed: 800,
+});
+
+AOS.init();

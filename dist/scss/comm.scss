@@ -42,7 +42,8 @@ body {
 }
 
 .inner {
-  padding: 0 180px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -56,8 +57,7 @@ body {
     height: 180px;
     overflow: hidden;
     margin-top: 20px;
-
-    .scroll {
+    f .scroll {
       width: 100%;
       display: flex;
       img {
@@ -359,7 +359,7 @@ body {
 
 #slide-tit {
   width: 100%;
-  height: 100vh;
+  padding-bottom: 300px;
   .slide-tit-center-icon {
     width: 71px;
     height: 71px;
@@ -402,13 +402,10 @@ body {
 // slide
 #swiper-section {
   width: 100%;
-  height: 100vh;
-  scroll-snap-type: y mandatory;
 
   .swiper-slide {
     background: var(--bg-color);
     width: 100%;
-    height: 110vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -841,11 +838,11 @@ body {
 
 #service {
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   margin-top: 200px;
   margin-bottom: 400px;
+  position: relative;
   .service-tit {
-    position: relative;
     .service-icon {
       position: absolute;
       top: 200px;
@@ -854,13 +851,13 @@ body {
       height: 61px;
     }
     .service-tit-txt {
-      position: relative;
+      max-width: 1260px;
       width: 100%;
       span {
         color: var(--default-text);
         text-align: center;
         font-family: "Sacred Valley", sans-serif;
-        font-size: 7vw;
+        font-size: 120px;
         font-style: normal;
         font-weight: 400;
         text-transform: uppercase;
@@ -869,7 +866,7 @@ body {
         color: var(--default-text);
         font-family: "Roboto", sans-serif;
         text-align: left;
-        font-size: 6vw;
+        font-size: 95px;
         font-style: normal;
         font-weight: 400;
         text-transform: uppercase;
@@ -882,7 +879,7 @@ body {
       .stt-i {
         position: absolute;
         top: 250px;
-        right: 140px;
+        right: 240px;
       }
       .stt-a {
         position: absolute;
